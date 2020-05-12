@@ -1,0 +1,45 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="HtmlUnknownTag" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="myValues">
+        <value>
+          <list size="9">
+            <item index="0" class="java.lang.String" itemvalue="nobr" />
+            <item index="1" class="java.lang.String" itemvalue="noembed" />
+            <item index="2" class="java.lang.String" itemvalue="comment" />
+            <item index="3" class="java.lang.String" itemvalue="noscript" />
+            <item index="4" class="java.lang.String" itemvalue="embed" />
+            <item index="5" class="java.lang.String" itemvalue="script" />
+            <item index="6" class="java.lang.String" itemvalue="div" />
+            <item index="7" class="java.lang.String" itemvalue="tr" />
+            <item index="8" class="java.lang.String" itemvalue="span" />
+          </list>
+        </value>
+      </option>
+      <option name="myCustomValuesEnabled" value="true" />
+    </inspection_tool>
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <value>
+          <list size="14">
+            <item index="0" class="java.lang.String" itemvalue="traitlets" />
+            <item index="1" class="java.lang.String" itemvalue="nltk" />
+            <item index="2" class="java.lang.String" itemvalue="pyppeteer" />
+            <item index="3" class="java.lang.String" itemvalue="Send2Trash" />
+            <item index="4" class="java.lang.String" itemvalue="simplegeneric" />
+            <item index="5" class="java.lang.String" itemvalue="pyrsistent" />
+            <item index="6" class="java.lang.String" itemvalue="singledispatch" />
+            <item index="7" class="java.lang.String" itemvalue="seaborn" />
+            <item index="8" class="java.lang.String" itemvalue="PySocks" />
+            <item index="9" class="java.lang.String" itemvalue="pytest-remotedata" />
+            <item index="10" class="java.lang.String" itemvalue="ruamel-yaml" />
+            <item index="11" class="java.lang.String" itemvalue="gevent" />
+            <item index="12" class="java.lang.String" itemvalue="Cython" />
+            <item index="13" class="java.lang.String" itemvalue="unicodecsv" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>

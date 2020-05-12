@@ -1,0 +1,71 @@
+.dropdown img{
+    width: 35px;
+    height:35px;
+    border-radius: 50px;
+    margin: -7px ;
+
+}
+
+.table-level{
+    width: 600px;
+    height: 150px;
+    margin: auto;
+
+}
+.table-level th{
+    text-align: center;
+}
+
+.span6 .left-line{
+    background-color: gainsboro;
+    margin: 15px auto 0;
+    width: 250px;
+    height: 100px;
+    border: 1px solid gainsboro;
+    text-align: center;
+}
+.height-footer{
+    background-color: white;
+    margin: 0 auto;
+    width: 250px;
+    height: 250px;
+    border: 1px solid gainsboro;
+    text-align: center;
+}
+.height-footer ul li{
+    list-style-type:none;
+    text-align: left;
+}
+.height-footer ul li span{
+
+    float:right;
+
+}
+.left-line{
+    text-align: center;
+}
+
+
+.left-line p{
+    font-size: 20px;
+    color: gray;
+
+}
+
+.btn-forbid{
+    margin-top: 15px;
+    width: 150px;
+    height: 30px;
+    background-color: gainsboro;
+}
+
+.btn-normal{
+    margin-top: 15px;
+    width: 150px;
+    height: 30px;
+    background-color: #3B74FF;
+}
+
+.sub-month,.add-month{
+    border-radius: 50%;
+}

@@ -1,0 +1,12 @@
+{% extends 'base_user.html' %}
+{% load static %}
+{% block content %}
+{{ block.super }}
+    {% ifequal act 1%}
+        <h3>邮箱成功验证，点击<a href="{% url 'app:person' %}">这里</a>返回</h3>
+
+        {%  else %}
+        <h3>激活成功后点击<a href="{% url 'app:home' %}">这里</a>返回主页</h3>
+    {% endifequal %}
+
+{% endblock %}

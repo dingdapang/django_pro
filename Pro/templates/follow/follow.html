@@ -1,0 +1,70 @@
+{% extends 'base_follow.html' %}
+{% load static %}
+
+{% block ext_css %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static 'app/follow/css/follow.css' %}">
+{% endblock %}
+
+{% block ext_js %}
+    {{ block.super }}
+    <script type="text/javascript" src="{% static 'app/follow/js/follow.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+    {{ block.super }}
+    <div class="container-fluid">
+	<div class="row-fluid">
+		<div class="col-lg-12">
+			<div class="row-fluid">
+				<div class="col-lg-2">
+				</div>
+				<div class="col-lg-4">
+                     <p class="lead">
+						关注公众号列表/
+					</p>
+                {% if fllow_accounts %}
+                    {% for fllow_account in fllow_accounts %}
+                        <div class="follow" account_id="{{ fllow_account.id }}">
+                            <img src="{{ fllow_account.a_head_img }}" alt="{{ fllow_account.a_name }}">
+                            <a href="{% url 'app:account_detail' account_id=fllow_account.id%}">{{ fllow_account.a_name }}</a>
+                            <button class="btn btn-warning cancel-follow">取消关注</button>
+                        </div>
+                    {% endfor %}
+                    {% else %}
+                    <div>
+                        <p class="text-warning">您未关注任何公众号，请先关注，再来本页面查看</p>
+                    </div>
+                {% endif %}
+
+				</div>
+                <div class="col-lg-4">
+                     <p class="lead">
+						拉黑公众号列表/
+					</p>
+					{% if block_accounts %}
+                    {% for block_account in block_accounts %}
+                        <div class="follow" account_id="{{ block_account.id }}">
+                            <img src="{{ block_account.a_head_img }}" alt="{{ block_account.a_name }}">
+                            <a href="{% url 'app:account_detail' account_id=block_account.id%}">{{ block_account.a_name }}</a>
+                            <button class="btn btn-info cancel-block">取消拉黑</button>
+                        </div>
+                    {% endfor %}
+                    {% else %}
+                    <div>
+                        <p class="text-warning">您未拉黑任何公众号，请先关注，再来本页面查看</p>
+                    </div>
+                {% endif %}
+				</div>
+				<div class="col-lg-2">
+				</div>
+			</div>
+            <br>
+        <br>
+        <br>
+            <br>
+
+		</div>
+	</div>
+</div>
+{% endblock %}

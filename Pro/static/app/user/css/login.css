@@ -1,0 +1,26 @@
+#text-top{
+
+}
+#text-top span a{
+    font-size: 50px;
+    color: gray;
+}
+#text-top a{
+    text-decoration-line: none;
+    font-size: 15px;
+}
+
+.button-css{
+    width:220px;
+    height: 50px;
+    margin: auto;
+}
+
+.form-horizontal p{
+    text-align: center;
+}
+
+#username_input,#password_input{
+    width: 60%;
+    height: 30px;
+}

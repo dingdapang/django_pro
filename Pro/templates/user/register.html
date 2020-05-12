@@ -1,0 +1,107 @@
+{% extends 'base_user.html' %}
+{% load static %}
+
+{% block ext_css %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static 'app/user/css/register.css' %}">
+{% endblock %}
+
+
+{% block ext_js %}
+    {{ block.super }}
+    <script type="text/javascript" src="{% static 'app/user/js/register.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="col-lg-12">
+                <h3 class="text-center">
+                    <div id="text-top">
+                        <span><a href="{% url 'app:home' %}">W-A</a></span>
+                        <br>
+                        <a href="{% url 'app:login' %} " id="login_t">登录</a>
+                        <a href="{% url 'app:register' %}" id="res_t">注册</a>
+                    </div>
+                </h3>
+
+                <br>
+                <br>
+                <br>
+
+                <div class="row-fluid">
+                    <div class="col-lg-2"></div>
+                    <div class="col-lg-4">
+                        <form class="form-horizontal" method="post" enctype="multipart/form-data"
+                              action="{% url 'app:register' %}" onsubmit="return check()">
+                            {% csrf_token %}
+                            <div class="control-group">
+
+
+                                <div class="controls">
+                                    <span>用&nbsp;户&nbsp;名:&nbsp;&nbsp;</span><input name="username" id="inputUsername" type="text"
+                                                            placeholder="请输入用户名">
+                                    <span id="username_info"></span>
+                                </div>
+                                <br>
+                            </div>
+                            <div class="control-group">
+                                {#                                        <label class="control-label" for="inputPassword">密码</label>#}
+                                <div class="controls">
+                                    <span>密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码:&nbsp;&nbsp;</span><input name="password" id="inputPassword"
+                                                                                   type="password"
+                                                                                   placeholder="请输入密码"/>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="control-group">
+                                {#                                        <label class="control-label" for="inputPassword2">验证密码</label>#}
+                                <div class="controls">
+                                    <span>确认密码:&nbsp;&nbsp;</span><input id="inputPassword2" name="password2" type="password"
+                                                             placeholder="请再次输入密码"/>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="control-group">
+                                {#                                        <label class="control-label" for="inputEmail">邮箱</label>#}
+                                <div class="controls">
+                                    <span>邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱:&nbsp;&nbsp;</span><input id="inputEmail" type="text"
+                                                                                   name="email" placeholder="请输入邮箱"/>
+                                    <span id="email_info"></span>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="control-group">
+
+                                <div class="controls">
+                                    <span>头&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;像:&nbsp;&nbsp;</span>
+                                    <input name="icon" type="file" id="icon_input">
+                                </div>
+                            </div>
+                            <br>
+                            <div class="control-group">
+                                <div class="button-css">
+                                    <button type="submit" class="btn btn-primary btn-block">注册</button>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                    <div class="col-lg-2"></div>
+                    <div class="col-lg-4">
+                        <img alt="100x100" src="{% static 'img/sun_small.jpg' %}"/>
+                        <p class="lead text-left">
+
+                            <em>关注作者公众号，获得更多信息</em>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+
+{% endblock %}

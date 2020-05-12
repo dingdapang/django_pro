@@ -1,0 +1,76 @@
+{% extends 'base_main.html' %}
+{% load static %}
+
+{% block ext_css %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static 'app/user/css/person.css' %}">
+{% endblock %}
+
+{% block ext_js %}
+    {{ block.super }}
+    <script type="text/javascript" src="{% static 'app/user/js/person.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+    {{ block.super }}
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="col-lg-12">
+                <div class="row-fluid">
+                    <div class="col-lg-4"></div>
+                    <div class="col-lg-4">
+                        <p>修改个人信息</p>
+                        {% if msg %}
+                            <div class="alert alert-success" role="alert">{{msg}}</div>
+                        {% endif %}
+
+                        <form class="form-horizontal" method="post" enctype="multipart/form-data"
+                              action="{% url 'app:person' %}" onsubmit="return check()">
+                            {% csrf_token %}
+                            <div class="control-group">
+                                <label class="control-label" for="inputUsername">用户名</label>
+                                <div class="controls">
+                                    <input name="username" id="inputUsername" type="text" placeholder="请输入用户名" value="">
+                                    <span id="username_info"></span>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" for="inputPassword">密&nbsp;&nbsp;码</label>
+                                <div class="controls">
+                                    <input name="password" id="inputPassword" type="password"
+                                           placeholder="请输入密码" value=""/>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" for="inputPassword2">确认密码</label>
+                                <div class="controls">
+                                    <input id="inputPassword2" name="password2" type="password"
+                                           placeholder="请再次输入密码" value=""/>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" for="inputEmail">邮&nbsp;&nbsp;箱</label>
+                                <div class="controls">
+                                    <input id="inputEmail" type="text" name="email" placeholder="请输入邮箱" value=""/>
+                                    <span id="email_info"></span>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" for="icon_input">头&nbsp;&nbsp;像</label>
+                                <div class="controls">
+                                    <input name="icon" type="file" id="icon_input" value="">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <div class="button-css">
+                                    <button type="submit" class="btn btn-primary btn-block">提交修改</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-lg-4"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

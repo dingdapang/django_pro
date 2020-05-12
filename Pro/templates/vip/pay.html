@@ -1,0 +1,102 @@
+{% extends 'base_vip.html' %}
+{% load static %}
+
+{% block ext_css %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static 'app/vip/css/vip.css' %}">
+{% endblock %}
+
+{% block ext_js %}
+    {{ block.super }}
+    <script type="text/javascript" src="{% static 'app/vip/js/vip.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+    {{ block.super }}
+    <div class="container-fluid" id="LG">
+        <div class="row-fluid">
+            <div class="span12">
+                <h3 class="text-center text-info">
+                    您当前的会员等级是
+                    <br>
+                    <span class="label badge-info">初级会员</span>
+
+                </h3>
+                <div class="row-fluid">
+                    <div class="span6">
+                        <div>
+                            <div class="left-line">
+                                <br>
+                                <p>免费会员</p>
+                                <span style="font-size: 23px">0</span>
+                                <span>元/月</span>
+                            </div>
+
+                            <div class="height-footer">
+
+                                <ul>
+                                    <br>
+                                    <li>关注公众号数量:
+                                        <span class="text-right">10个</span></li>
+                                    <br>
+                                    <li>拉黑公众号数量:
+                                        <span class="text-right">5个</span></li>
+                                    <br>
+                                    <li>公众号排行榜显示数量:
+                                        <span class="text-right">30个</span></li>
+                                    <br>
+                                    <li>是否能看到公众号文章:
+                                        <span class="text-right">否</span></li>
+                                </ul>
+                                <button type="button" disabled="disabled" class="btn-forbid">已领用</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span6">
+                        <div>
+                            <div class="left-line">
+                                <br>
+                                <p>高级会员</p>
+                                <span style="font-size: 23px; color: orange">100</span>
+                                <span>元/月</span>
+                            </div>
+                            <div class="height-footer">
+                                <ul>
+                                    <br>
+                                    <li>关注公众号数量:
+                                        <span class="text-right">100个</span></li>
+                                    <br>
+                                    <li>拉黑公众号数量:
+                                        <span class="text-right">20个</span></li>
+                                    <br>
+                                    <li>公众号排行榜显示数量:
+                                        <span class="text-right">100个</span></li>
+                                    <br>
+                                    <li>是否能看到公众号文章:
+                                        <span class="text-right">是</span></li>
+                                </ul>
+
+                                <button level="2" class="add-month">＋</button>
+                                <span>0</span>
+                                <button level="2" class="sub-month">－</button>
+                                <span style="color: orange; font-size: 20px">  0 </span>RMB
+                                <br>
+                                <button type="button" level="2" class="btn-normal">马上订购</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+{% endblock %}

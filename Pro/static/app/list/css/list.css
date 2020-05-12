@@ -1,0 +1,112 @@
+.dropdown img{
+    width: 35px;
+    height:35px;
+    border-radius: 50px;
+    margin: -7px ;
+
+}
+.span2 p{
+    margin-top: 100px;
+    color: orange;
+    font-size: 20px;
+}
+.remmond li{
+    color: red;
+    margin: 20px auto 0;
+    text-align: center;
+}
+.li-header{
+
+    /*background-color: #bce8f1;*/
+    border-radius: 10px;
+}
+
+.li-header a{
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+}
+
+.date-select{
+    margin-top: 25px;
+    margin-bottom: 20px;
+    width: 280px;
+    height: 40px;
+    /*background-color: #fff;*/
+
+}
+.date-select  i{
+
+
+    color: gray;
+    font-size: 14px;
+}
+
+/*.date-change{*/
+/*    float: right;*/
+/*    width: 210px ;*/
+/*    height: 33px ;*/
+/*    border: 1px solid gainsboro;*/
+/*    !*background-color: red;*!*/
+/*    border-radius: 2px;*/
+/*}*/
+
+/*.date-change label{*/
+/*    float: left;*/
+/*    !*display: inline;*!*/
+/*    !*margin: auto;*!*/
+/*}*/
+
+/*.date-change  label input{*/
+
+/*    width: 175px;*/
+/*    height: 25px;*/
+/*    text-align: center;*/
+/*    border: none;*/
+/*    -webkit-box-shadow: none ;*/
+/*    background-color: white;*/
+/*    color: gray;*/
+/*    font-size: 14px;*/
+/*}*/
+
+
+
+.account_select td{
+    margin: auto;
+}
+.account_select td img{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+}
+.button2{
+    /*text-decoration: none;*/
+    color: black;
+    margin: auto;
+}
+.Button{
+    /*padding-right: 3px;*/
+    width: 45px;
+    height: 10px;
+}
+.account_select td a{
+    text-decoration: none;
+}
+
+.content-footer{
+    width: 300px;
+    margin: auto;
+    /*background-color: red;*/
+}
+
+.rank{
+    position: relative;
+}
+
+.dropdown{
+    text-align: center;
+}
+
+/*.acitvate{*/
+/*    color: #bce8f1;*/
+/*}*/

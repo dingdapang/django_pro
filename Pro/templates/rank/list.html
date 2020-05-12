@@ -1,0 +1,118 @@
+{% extends 'base_list.html' %}
+{% load static %}
+{% load set_val %}
+{##}
+{% block ext_css %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static 'app/list/css/list.css' %}">
+{% endblock %}
+
+{% block ext_js %}
+    {{ block.super }}
+    <script type="text/javascript" src="{% static 'app/list/js/list.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+    {{ block.super }}
+    <div class="container-fluid" id="LG">
+        <div class="row-fluid">
+            <div class="col-lg-1">
+            </div>
+
+            <div class="col-lg-10 rank">
+                <ul class="list-unstyled list-inline">
+                    {% for t_type in types %}
+
+                        <li class="li-header">
+                            {% ifequal rank_type t_type.t_type%}
+                                <a href="#" style="color: #bce8f1;"  type="{{ t_type.t_type }}">{{ t_type.t_type }}</a>
+                                {% else %}
+                                <a href="#" class="types-header" type="{{ t_type.t_type }}">{{ t_type.t_type }}</a>
+                            {% endifequal %}
+
+                        </li>
+                    {% endfor %}
+                </ul>
+                <div class="date-select">
+                    <i>周榜：</i>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-default  dropdown-toggle time-button" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">
+                                {{ start_time }} <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu menu2">
+
+                            </ul>
+                        </div>
+                </div>
+                <table class="table table-hover table-striped">
+                    <thead>
+                    <tr>
+                        <th>
+                            排名
+                        </th>
+                        <th>
+                            公众号
+                        </th>
+                        <th>
+                            原创
+                        </th>
+                        <th>
+                            总发文
+                        </th>
+                        <th>
+                            总阅读数
+                        </th>
+                        <th>
+                            头条平均阅读
+                        </th>
+                        <th>
+                            在看
+                        </th>
+                        <th>
+                            赞赏
+                        </th>
+                        <th>
+                            操作
+                        </th>
+                    </tr>
+                    </thead>
+
+
+                    <tbody id="content">
+                    {% with d=0 %}
+
+
+                    {% for ran in rans %}
+                        {% set d++ %}
+                        <tr class="account_select">
+                            <td>{{ d }}</td>
+                            <td>
+                                <img src="{{ ran.r_account.a_head_img }}" alt="">
+                                <a href="{% url 'app:account_detail' account_id=ran.r_account_id %}"
+                                   class="button2">{{ ran.r_account.a_name }}</a>
+                            </td>
+                            <td>{{ ran.r_is_origin_num }}</td>
+                            <td>{{ ran.r_put_num }}</td>
+                            <td>{{ ran.r_all_read_num }}</td>
+                            <td>{{ ran.r_origin_avg }}</td>
+                            <td>{{ ran.r_all_watch_num }}</td>
+                            <td>{{ ran.r_all_admire_num }}</td>
+                            <td class="Button"><a
+                                    href="{% url 'app:account_detail' account_id=ran.r_account_id %}">详情 </a></td>
+                        </tr>
+                    {% endfor %}
+                    {% endwith %}
+                    </tbody>
+
+                </table>
+
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
+
+
+

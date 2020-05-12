@@ -1,0 +1,136 @@
+{% extends 'base_search.html' %}
+{% load static %}
+
+{% block ext_css %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static 'app/search/css/search.css' %}">
+{% endblock %}
+
+{% block ext_js %}
+    {{ block.super }}
+    <script type="text/javascript" src="{% static 'app/search/js/search.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+    {{ block.super }}
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="col-lg-12">
+                <div class="col-lg-2">
+                    <fieldset>
+                        <legend>热搜公众号关键词</legend>
+                        <ol>
+                            {% for hot_search in hot_searchs %}
+                                <li>
+                                    <a href="/app/search/?keyword={{ hot_search }}&page=1">{{ hot_search }}</a>
+                                </li>
+                            {% endfor %}
+                        </ol>
+                    </fieldset>
+                </div>
+
+                {#            es搜索#}
+
+                <div class="col-lg-5">
+                    <fieldset>
+                        <legend>Search</legend>
+                        <span class="help-block">输入你要查询的关键字</span>
+                        <div class="inputArea">
+                            <form action="" method="get">
+                                <label for="keyword"></label>
+                                <div class="row-search">
+                                    <input type="text" class="searchInput" placeholder="请输入要查询的公众号名称"
+                                           value="{{ keyword }}" id="keyword" name="keyword">
+                                    <input type="hidden"  value="{{ page }}" name="page"
+                                           id="page">
+                                    <input class="search-button searchButton" value="搜公众号" type="button" onclick="add_search()" />
+                                    <input class="search-button searchButton" value="搜文章" type="button" onclick="add_search2()" />
+                                </div>
+                            </form>
+                            <ul class="dataList">
+
+                            </ul>
+
+                        </div>
+                        <div class="historyArea">
+
+                            <p class="history mysearch">
+                                <label>我的搜索：</label>
+                                <span class="all-search">
+
+
+                                </span>
+
+                            </p>
+                        </div>
+
+
+                    </fieldset>
+                </div>
+                <div class="col-lg-5">
+                    <fieldset>
+                        <legend>查询结果</legend>
+                        {% if keyword %}
+                            <p>关键词：{{ keyword }}</p>
+
+                        {% endif %}
+
+                        <br>
+                        {% if accounts %}
+                            <ul class="list-inline list-unstyled" id="search_result">
+                                {% for account in accounts %}
+                                    <li>
+                                        <div>
+                                            <img src="{{ account.a_head_img }}" alt="{{ account.a_fakeid }}"><a
+                                                href="{% url 'app:account_detail' account_id=account.account_id %}"><span>{{ account.a_name }}</span></a>
+                                                <p>简介：{{ account.a_intro }}</p>
+                                        </div>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                            {#                        分页器#}
+                            <nav aria-label="Page navigation">
+                                <ul class="pager">
+                                    <li class="Previous"><a href="javascript:;">Previous</a></li>
+                                    <span class="current">第{{ page }}/{{ page_count }}页</span>
+                                    <li class="Next"><a href="javascript:;">Next</a></li>
+                                    <li class="max_length" value="{{ account_len }}">搜索结果共{{ account_len }}个记录</li>
+                                </ul>
+                            </nav>
+                        {% else %}
+                        {% endif %}
+                        {% if all_hits %}
+                            <ul class="list-inline list-unstyled">
+
+                                {% for all_hit in all_hits %}
+
+                                    <div class="article-result">
+                                        <li>
+                                            <img src="http://img02.store.sogou.com/net/a/05/link?appid=100520091&url={{ all_hit.w_cover }}" alt="">
+                                            <a target="_blank" href="{{ all_hit.w_link }}">{% autoescape off %}{{ all_hit.w_title }}{% endautoescape %}</a>
+                                            <p>阅读数: {{ all_hit.w_read_num }} 点赞数: {{ all_hit.w_watch_num }}赞赏数: {{ all_hit.w_admire_num }}</p>
+                                        </li>
+                                    </div>
+                                {% endfor %}
+                            </ul>
+
+                        {% endif %}
+                    </fieldset>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <script type="text/javascript">
+
+
+    </script>
+{% endblock %}
+
+<!-- -->

@@ -1,0 +1,90 @@
+{% extends 'base_user.html' %}
+{% load static %}
+
+{% block ext_css %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static 'app/user/css/login.css' %}">
+{% endblock %}
+
+{% block ext_js %}
+    {{ block.super }}
+    <script type="text/javascript" src="{% static 'app/user/js/login.js' %}"></script>
+{% endblock %}
+
+
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="col-lg-12">
+                <h3 class="text-center">
+                    <div id="text-top">
+                        <span><a href="{% url 'app:home' %}">W-A</a></span>
+                        <br>
+                        <a href="{% url 'app:login' %} " id="login_t">登录</a>
+                        <a href="{% url 'app:register' %}" id="res_t">注册</a>
+                    </div>
+                </h3>
+
+                <br>
+                <br>
+                <br>
+
+                <div class="row-fluid">
+                <div class="col-lg-2"></div>
+                    <div class="col-lg-4">
+                        <form class="form-horizontal" method="post" action="{% url 'app:login' %}"
+                              onsubmit="return parse_data()">
+                            {% csrf_token %}
+
+                            <br>
+                            <br>
+                            {% if error_message %}
+                                <p class="alert alert-warning">{{ error_message }}</p>
+
+                            {% endif %}
+
+                            <div class="control-group">
+                                <div class="controls">
+                                   <span>用户名:&nbsp;&nbsp;&nbsp;&nbsp;</span> <input id="username_input" type="text" placeholder="请输入用户名" name="username"/>
+                                </div>
+                            </div>
+                            <br>
+                            <br>
+                            <div class="control-group">
+                                <div class="controls">
+                                    <span>密&nbsp;&nbsp;&nbsp;&nbsp;码: &nbsp;&nbsp;&nbsp;&nbsp;</span><input id="password_input" type="password" placeholder="请输入密码" name="password"/>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="control-group">
+{#                                <div class="controls">#}
+{#                                    <label class="checkbox"><input type="checkbox"/> 记住我</label>#}
+{##}
+{#                                </div>#}
+                                <br>
+                                <div class="button-css">
+
+                                    <button type="submit" class="btn btn-primary btn-block">登录</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-lg-2"></div>
+                    <div class="col-lg-4">
+                        <img alt="100x100" src="{% static 'img/sun_small.jpg' %}"/>
+                        <p class="lead text-left">
+
+                            <em>关注作者公众号，获得更多信息</em>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+
+{% endblock %}

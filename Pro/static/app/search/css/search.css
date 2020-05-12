@@ -1,0 +1,118 @@
+.dropdown img{
+    width: 35px;
+    height:35px;
+    border-radius: 50px;
+    margin: -7px ;
+
+}
+
+
+#keyword{
+    width: 70%;
+    height: 100%;
+}
+.row-search{
+    width: 100%;
+    height: 40px;
+}
+
+.row-search .search-button{
+    margin-left: -5px;
+    width: 68px;
+    height: 100%;
+    background-color: #0084ff;
+    color: white;
+    /*border: 1px solid gray;*/
+
+}
+
+.col-lg-2 fieldset{
+    /*text-align: center;*/
+    margin: auto;
+}
+.col-lg-2 fieldset legend{
+    color: orange;
+    font-size: 20px;
+
+}
+
+#search_result li div{
+
+    width: 500px;
+    /*height: 80px;*/
+    background-color: gainsboro;
+    border: 1px solid gainsboro;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+#search_result li div img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.nav-page{
+    display: none;
+}
+
+ol li a{
+    color: orange;
+    text-decoration: none;
+}
+
+/*es搜索部分css*/
+/*input搜索区域*/
+.inputArea{position:relative;margin-bottom:65px;}
+/*.searchInput{border:1px solid #bfbfbf;padding:0 15px;outline:none;height:40px;*height:39px;*line-height:40px;width:520px;font-size:14px;}*/
+/*.searchButton{position:absolute;left:550px;*left:552px;*top:1px;width:106px;height:42px;*height:41px;border:none;cursor:pointer;}*!*/
+
+/*高级搜索*/
+/*.inputArea .advanced{position:absolute;font-size:14px;left:674px;top:12px;text-decoration:underline;}*/
+/*联想下拉区域*/
+.inputArea .dataList{display:none;position:absolute;left:0;top:60px;*top:43px;width:70%;padding:5px 0;background:#fff;border:1px solid #bfbfbf;border-top:none;}
+.inputArea .dataList li{padding:2px 15px;font-size:14px; list-style: none;}
+.inputArea .dataList li:hover{background:#f0f0f0;color:#0080cc;font-weight:bold;}
+
+/*搜索历史区域*/
+.historyArea{margin:0 auto;width:485px;}
+.historyArea .history {margin-bottom:5px;}
+.historyArea .history label{font-weight:bold;}
+.historyArea .history a{margin-right:12px;}
+
+fieldset{
+    width: 100%;
+    height: 100%;
+}
+.article-result{
+    width: 100%;
+    /*height: 150px;*/
+    background-color: gainsboro;
+    border: 1px solid gainsboro;
+    margin-top: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.article-result li img{
+    margin-top: 10px;
+    margin-left: 5px;
+    margin-bottom: 10px;
+    width: 98%;
+    height: 100px;
+
+}
+.article-result li a {
+
+    text-decoration: none;
+    /*margin-left: auto;*/
+}
+.article-result li p {
+    text-align: center;
+    margin-top: 10px;
+}
+.keyWord{color:#d90909;}
+
+#search_result li div a{
+    text-decoration: none;
+}

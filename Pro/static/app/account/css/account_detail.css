@@ -1,0 +1,44 @@
+.dropdown img{
+    width: 35px;
+    height:35px;
+    border-radius: 50px;
+    margin: -7px ;
+}
+
+.account_img{
+    width: 100px;
+    height: 100px;
+    float: left;
+    margin-left: 30px;
+    /*background-color: red;*/
+}
+
+.account-header{
+    margin-left: 15px;
+    width: 80%;
+    /*width: 300px;*/
+    /*height: 130px;*/
+    /*background-color: red;*/
+    float: left;
+}
+
+.account-follow{
+    float: right;
+}
+
+.account{
+    width: 95%;
+    /*height: 130px;*/
+    /*background-color: red;*/
+}
+.update_time{
+    float: right;
+}
+
+#article-content{
+    margin-left: 10px;
+}
+
+.article-a tr td a{
+    text-decoration: none;
+}

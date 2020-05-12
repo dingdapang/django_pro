@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="icon" href="{% static 'img/favicon.ico' %}">
+    <link rel="stylesheet" href="{% static 'css/layoutit.css' %}">
+	<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+{#    <link rel="stylesheet" href="{% static 'css/bootstrap-combined.min.css' %}">#}
+    <link rel="stylesheet" href="{% static 'css/bootstrap-theme.css' %}">
+
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+{#    <script src="{% static 'js/jquery-ui.js' %}"></script>#}
+{#    <script src="{% static 'js/jquery.ui.touch-punch.min.js' %}"></script>#}
+{#    <script src="{% static 'js/jquery.htmlClean.js' %}"></script>#}
+{#    <script src="{% static 'js/npm.js' %}"></script>#}
+    <script src="{% static 'js/swiper.jquery.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/md5.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/base.js' %}"></script>
+
+
+
+
+    {% block ext_css %}
+
+    {% endblock %}
+</head>
+<body>
+
+
+{% block header %}
+
+{% endblock %}
+
+
+{% block content %}
+
+{% endblock %}
+
+
+{% block footer %}
+
+{% endblock %}
+
+
+
+{% block  ext_js %}
+
+{% endblock %}
+<blockquote>
+    <address class="text-center"><a href="http://dinglibo.top">dinglibo.top</a>
+    <span>All Rights Reserved备案号：京ICP备20009993号</span></address>
+</blockquote>
+{#<script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>#}
+{#<script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>#}
+{#<script type="text/javascript" src="{% static 'js/base.js' %}"></script>#}
+</body>
+</html>

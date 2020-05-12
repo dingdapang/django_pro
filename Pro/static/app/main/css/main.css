@@ -1,0 +1,21 @@
+footer{
+    width: 100%;
+    height: 20px;
+    position: fixed;
+    display: flex;
+    background: red;
+    bottom: 0;
+    margin:  auto 0;
+}
+footer div{
+    width: 100%;
+    height: 20px;
+    text-align: center;
+}
+
+footer div a{
+    text-decoration: none;
+}
+.navbar-header{
+    width: 300px;
+}
