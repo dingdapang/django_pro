@@ -1,4 +1,4 @@
-Django==2.2
+Django==2.2.10
 django-redis==4.11.0
 elasticsearch==6.8.1
 elasticsearch-dsl==6.4.0
